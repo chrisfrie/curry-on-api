@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pictures",
+  "info": {
+    "name": "Picture"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "userChallengePicture": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "caption": {
+      "type": "text",
+      "maxLength": 500
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "pictures"
+    },
+    "challenge": {
+      "via": "pictures",
+      "model": "challenge"
+    }
+  }
+}
