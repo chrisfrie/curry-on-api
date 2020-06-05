@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "challenges",
+  "info": {
+    "name": "Challenge"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 40
+    },
+    "details": {
+      "type": "text",
+      "maxLength": 500,
+      "required": true
+    },
+    "pommesPoints": {
+      "type": "biginteger",
+      "required": true
+    },
+    "startingDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "usersCompleted": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "finishedChallenges",
+      "dominant": true
+    },
+    "pictures": {
+      "collection": "picture",
+      "via": "challenge"
+    }
+  }
+}
