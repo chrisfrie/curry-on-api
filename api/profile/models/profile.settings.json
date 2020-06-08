@@ -1,35 +1,32 @@
 {
   "kind": "collectionType",
-  "collectionName": "pictures",
+  "collectionName": "profiles",
   "info": {
-    "name": "Picture"
+    "name": "Profile"
   },
   "options": {
     "increments": true,
     "timestamps": true
   },
   "attributes": {
-    "userChallengePicture": {
+    "avatar": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
         "images"
       ],
       "plugin": "upload",
-      "required": true
+      "required": false
     },
-    "caption": {
-      "type": "text",
-      "maxLength": 300
+    "pommesPoints": {
+      "type": "integer",
+      "required": true,
+      "default": 0
     },
     "user": {
-      "via": "pictures",
       "plugin": "users-permissions",
-      "model": "user"
-    },
-    "challenge": {
-      "via": "pictures",
-      "model": "challenge"
+      "model": "user",
+      "via": "profile"
     }
   }
 }

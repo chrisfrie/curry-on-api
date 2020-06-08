@@ -23,21 +23,17 @@
       "type": "biginteger",
       "required": true
     },
-    "startingDate": {
-      "type": "date"
-    },
-    "endDate": {
-      "type": "date"
+    "pictures": {
+      "collection": "picture",
+      "via": "challenge"
     },
     "usersCompleted": {
       "plugin": "users-permissions",
       "collection": "user",
-      "via": "finishedChallenges",
-      "dominant": true
+      "via": "finished_challenges"
     },
-    "pictures": {
-      "collection": "picture",
-      "via": "challenge"
+    "chapterId": {
+      "type": "integer"
     }
   }
 }

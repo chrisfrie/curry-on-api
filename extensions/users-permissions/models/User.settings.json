@@ -54,12 +54,17 @@
       "configurable": false
     },
     "pictures": {
-      "via": "user",
-      "collection": "picture"
+      "collection": "picture",
+      "via": "user"
     },
-    "finishedChallenges": {
+    "profile": {
+      "via": "user",
+      "model": "profile"
+    },
+    "finished_challenges": {
       "via": "usersCompleted",
-      "collection": "challenge"
+      "collection": "challenge",
+      "dominant": true
     }
   }
 }
