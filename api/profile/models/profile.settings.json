@@ -16,12 +16,7 @@
         "images"
       ],
       "plugin": "upload",
-      "required": false
-    },
-    "pommesPoints": {
-      "type": "integer",
-      "required": true,
-      "default": 0
+      "required": true
     },
     "user": {
       "plugin": "users-permissions",
