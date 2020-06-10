@@ -54,12 +54,8 @@
       "configurable": false
     },
     "pictures": {
-      "via": "user",
-      "collection": "picture"
-    },
-    "finishedChallenges": {
-      "via": "usersCompleted",
-      "collection": "challenge"
+      "collection": "picture",
+      "via": "user"
     }
   }
 }

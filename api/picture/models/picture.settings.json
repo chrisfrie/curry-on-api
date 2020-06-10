@@ -23,9 +23,9 @@
       "maxLength": 500
     },
     "user": {
+      "via": "pictures",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "pictures"
+      "model": "user"
     },
     "challenge": {
       "via": "pictures",
