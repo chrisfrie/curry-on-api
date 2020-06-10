@@ -56,6 +56,10 @@
     "pictures": {
       "collection": "picture",
       "via": "user"
+    },
+    "profile": {
+      "via": "user",
+      "model": "profile"
     }
   }
 }
