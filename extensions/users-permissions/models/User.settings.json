@@ -54,12 +54,12 @@
       "configurable": false
     },
     "pictures": {
-      "via": "user",
-      "collection": "picture"
+      "collection": "picture",
+      "via": "user"
     },
-    "finishedChallenges": {
-      "via": "usersCompleted",
-      "collection": "challenge"
+    "profile": {
+      "via": "user",
+      "model": "profile"
     }
   }
 }
