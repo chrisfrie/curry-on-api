@@ -1,15 +1,23 @@
+const url = require("url");
+
 module.exports = ({ env }) => {
+  const parsedUrl = url.parse(env.DATABASE_URL);
+
   return {
-    defaultConnection: 'default',
+    defaultConnection: "default",
     connections: {
       default: {
-        connector: 'bookshelf',
+        connector: "bookshelf",
         settings: {
-          client: 'sqlite',
-          filename: env('DATABASE_FILENAME', '.tmp/data.db'),
+          client: "postgres",
+          host: parsedUrl.hostname,
+          port: parsedUrl.port,
+          database: parsedUrl.path,
+          username: parsedUrl.username,
+          password: parsedUrl.password,
         },
         options: {
-          useNullAsDefault: true,
+          ssl: false,
         },
       },
     },
