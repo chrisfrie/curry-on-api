@@ -1,4 +1,5 @@
 const url = require("url");
+const [username, password] = parsedUrl.auth.split(":");
 
 module.exports = ({ env }) => {
   const parsedUrl = url.parse(process.env.DATABASE_URL);
@@ -12,9 +13,9 @@ module.exports = ({ env }) => {
           client: "postgres",
           host: parsedUrl.hostname,
           port: parsedUrl.port,
-          database: parsedUrl.path,
-          username: parsedUrl.username,
-          password: parsedUrl.password,
+          database: parsedUrl.path.substring(1),
+          username,
+          password,
         },
         options: {
           ssl: false,
