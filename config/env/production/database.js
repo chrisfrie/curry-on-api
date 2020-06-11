@@ -1,8 +1,8 @@
 const url = require("url");
-const [username, password] = parsedUrl.auth.split(":");
 
 module.exports = ({ env }) => {
   const parsedUrl = url.parse(process.env.DATABASE_URL);
+  const [username, password] = parsedUrl.auth.split(":");
 
   return {
     defaultConnection: "default",
