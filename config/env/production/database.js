@@ -1,7 +1,7 @@
 const url = require("url");
 
 module.exports = ({ env }) => {
-  const parsedUrl = url.parse(env.DATABASE_URL);
+  const parsedUrl = url.parse(process.env.DATABASE_URL);
 
   return {
     defaultConnection: "default",
